@@ -57,8 +57,8 @@ def main():
     # Data is located at:
     # "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
 
-    datastore = Datastore.get(workspace, 'automlsamplenotebooksdata')
-    ds = Dataset.Tabular.from_delimited_files(path=(datastore, 'automl-sample-notebook-data/bankmarketing_train.csv'))
+    web_path = "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
+    ds = Dataset.Tabular.from_delimited_files(path=web_path)
 
     x, y = clean_data(ds)
 
